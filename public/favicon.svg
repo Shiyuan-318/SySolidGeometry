@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#0d1117"/>
+  <path d="M32 8L52 20V44L32 56L12 44V20L32 8Z" stroke="#00d4ff" stroke-width="2.5" fill="none"/>
+  <path d="M32 8V56" stroke="#00d4ff" stroke-width="1.5" opacity="0.5"/>
+  <path d="M12 20L52 44" stroke="#00d4ff" stroke-width="1.5" opacity="0.5"/>
+  <path d="M52 20L12 44" stroke="#00d4ff" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="32" cy="8" r="3" fill="#00d4ff"/>
+  <circle cx="52" cy="20" r="3" fill="#00ff88"/>
+  <circle cx="52" cy="44" r="3" fill="#ff6b6b"/>
+  <circle cx="32" cy="56" r="3" fill="#ffd93d"/>
+  <circle cx="12" cy="44" r="3" fill="#c084fc"/>
+  <circle cx="12" cy="20" r="3" fill="#fb923c"/>
+  <text x="32" y="38" text-anchor="middle" fill="#00d4ff" font-family="Arial" font-weight="bold" font-size="10">Sy</text>
+</svg>
