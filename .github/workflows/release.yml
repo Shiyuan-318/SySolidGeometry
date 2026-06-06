@@ -1,0 +1,53 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build web app
+        run: npm run build
+
+      - name: Build Electron app
+        run: npx electron-builder --win
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release/*.exe
+          body: |
+            # Sy Solid Geometry v1.0.0
+
+            3D立体几何可视化工具
+
+            ## 功能
+            - 支持3D画布渲染，拖动旋转/缩放，Ctrl+/-缩放
+            - 支持输入多个函数表达式（显式/隐式/参数方程）
+            - 支持拖动顶点调整位置
+            - 支持更换颜色、修改顶点字母、实线虚线切换
+            - 支持计算面积
+            - 支持绘制空间曲线并生成表达式
+            - 支持导出PNG图像
+
+            Author: Shiyuan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
